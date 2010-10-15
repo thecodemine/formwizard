@@ -412,13 +412,13 @@
 		},
 		
 		update_steps : function(){
-			this.steps = this.element.find(".step");
-			this.steps.not("#" + this.currentStep).hide().find(":input").attr("disabled","disabled");
+			this.steps = this.element.find(".step").addClass("ui-formwizard-content");
+			this.steps.not("#" + this.currentStep).hide().find(":input").addClass("ui-wizard-content").attr("disabled","disabled");
 			this._checkIflastStep(this.currentStep);
 			this._enableNavigation();
 			if(!this.options.disableUIStyles){			
-				this.steps.addClass("ui-formwizard-content ui-helper-reset ui-corner-all");
-				this.steps.find(":input").addClass("ui-wizard-content ui-helper-reset ui-state-default");
+				this.steps.addClass("ui-helper-reset ui-corner-all");
+				this.steps.find(":input").addClass("ui-helper-reset ui-state-default");
 			}
 		},
 

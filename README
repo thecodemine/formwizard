@@ -1,0 +1,8 @@
+
+jQuery formwizard is a jQuery plugin which turns a regular HTML form into a wizard with very little effort. The plugin supports AJAX form submission, form validation and browser back and forward buttons, all through integration with the following jQuery plugins: jQuery form, jQuery validation and the BBQ plugin.
+
+The formwizard plugin source is located under /js/jquery.form.wizard-3.0.2.js
+
+A bunch of examples that tries to highlight different use cases can be found in the /examples/ folder
+
+The plugins official demo page can be found at http://thecodemine.org

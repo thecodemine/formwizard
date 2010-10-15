@@ -1,3 +1,11 @@
+October 16.
+
+Version 3.0.3 released. Changes:
+
+- fixed update_steps function so that it does not set ui styles if disableUIStyles is set to false
+- Changed the functionality of the plugin so that the form is submitted _exactly_ like any other form, when the form plugin is disabled.
+- Added 2 more examples (20 and 21)
+
 September 26.
 
 Version 3.0.2 released. Changes:

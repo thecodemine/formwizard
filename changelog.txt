@@ -1,3 +1,10 @@
+October 22.
+
+Version 3.0.4 released. Changes:
+
+- fixed initialization code so that it does not set ui styles if disableUIStyles is set to false
+- Fixed bug where the only the input fields on the last step were sent to the server
+
 October 16.
 
 Version 3.0.3 released. Changes:

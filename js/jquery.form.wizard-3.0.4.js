@@ -66,7 +66,7 @@
 			
 			this.steps = this.element.find(".step").hide();
 			
-			this.firstStep = this.steps.first().attr("id");
+			this.firstStep = this.steps.eq(0).attr("id");
 			this.activatedSteps = new Array();
 			this.isLastStep = false;
 			this.previousStep = undefined;

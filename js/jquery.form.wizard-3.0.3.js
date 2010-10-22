@@ -178,6 +178,7 @@
 				}
 			}
 			if(this.isLastStep && !this.options.formPluginEnabled){
+			  this.element.find("*").removeAttr("disabled");
 				return true;
 			}
 			this._continueToNextStep();

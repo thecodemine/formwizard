@@ -1,5 +1,5 @@
 /*
- * jQuery wizard plug-in 3.0.5 alpha (29-OCT-2010)
+ * jQuery wizard plug-in 3.0.5 alpha (13-JAN-2011)
  *
  *
  * Copyright (c) 2010 Jan Sundman (jan.sundman[at]aland.net)
@@ -118,7 +118,6 @@
 							wizard._show(hashStep);
 					}
 				});
-				this._updateHistory(this.firstStep);
 			}
 
 			this.element.addClass("ui-formwizard");

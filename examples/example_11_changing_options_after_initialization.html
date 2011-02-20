@@ -79,7 +79,7 @@
 			<h3>Example of how to set options in runtime</h3>
 			<ul>
 			<li>When initialized, the wizard does not focus the first input automatically</li>
-			<li>After clicking next, the first input on each step will be focused</li>
+			<li>After clicking next and Finland has been chosen, the transition animation will be changed.</li>
 			</ul>
 			<hr />
 			<h5 id="status"></h5>
@@ -175,8 +175,14 @@
 				);
   		
   			$("#demoForm").bind("step_shown", function(event,data){
-  				if(data.currentStep === 'sweden' || data.currentStep === 'finland')
-	  				$("#demoForm").formwizard("option","focusFirstInput", true);
+  				if(data.currentStep === 'finland')
+	  				$("#demoForm").formwizard("option",{inAnimation : {height: 'show'},
+									        outAnimation: {height: 'hide'},
+										inDuration : 700,
+										outDuration: 700,
+										easing: 'easeOutBounce'});
+					
+
   			})
   		});
     </script>

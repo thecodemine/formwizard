@@ -5,6 +5,8 @@ Version 3.0.5 alpha
 - remove initial call to this._updateHistory(this.firstStep), this to prevent firefox from hiding the favicon (due to some issue with pushState).
 - delay the triggering of the "step_shown" event until the step has finished animating.
 - updated example : example_11_changing_options_after_initialization.html so that the transition animation is changed in runtime
+- updated example : example_4_step_shown_event.html
+
 October 22.
 
 Version 3.0.4 released. Changes:

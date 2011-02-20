@@ -1,8 +1,10 @@
-
+Version 3.0.5 alpha
 
 - use eq(0) instead of first() for working towards backwards compatibility with jQuery < 1.4 
 - rename the javascript file from jquery.form.wizard-3.0.4.js to jquery.form.wizard.js for easier maintenance around releases. Updated examples to refer to the new filename.
 - remove initial call to this._updateHistory(this.firstStep), this to prevent firefox from hiding the favicon (due to some issue with pushState).
+- delay the triggering of the "step_shown" event until the step has finished animating.
+
 October 22.
 
 Version 3.0.4 released. Changes:

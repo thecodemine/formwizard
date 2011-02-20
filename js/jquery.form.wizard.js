@@ -1,5 +1,5 @@
 /*
- * jQuery wizard plug-in 3.0.5 alpha (13-JAN-2011)
+ * jQuery wizard plug-in 3.0.5 alpha (20-FEB-2011)
  *
  *
  * Copyright (c) 2010 Jan Sundman (jan.sundman[at]aland.net)
@@ -252,7 +252,7 @@
 			}
 		},
 		   
-		_animate : function(oldStep, newStep){
+		_animate : function(oldStep, newStep, stepShownCallback){
 			this._disableNavigation();
 			var old = this.steps.filter("#" + oldStep);
 			var current = this.steps.filter("#" + newStep);
@@ -264,6 +264,8 @@
 					if(wizard.options.focusFirstInput)
 						current.find(":input:first").focus();
 					wizard._enableNavigation();
+
+					stepShownCallback.apply(wizard);
 				});
 				return;
 			});
@@ -305,6 +307,7 @@
 	   
 		_show : function(step){
 			var backwards = false;
+			var triggerStepShown = step !== undefined;
 			if(step == undefined || step == ""){ 
 					this.activatedSteps.pop();
 					step = this.firstStep;
@@ -322,10 +325,10 @@
 				this.previousStep = this.currentStep;
 				this._checkIflastStep(step);
 				this.currentStep = step;
-
-				this._animate(this.previousStep, step);
+				var stepShownCallback = function(){if(triggerStepShown)$(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));};
+				this._animate(this.previousStep, step, stepShownCallback);
 			};
-			$(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
+			
 			
 		},
 	   

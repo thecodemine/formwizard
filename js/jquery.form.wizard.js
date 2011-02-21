@@ -79,13 +79,13 @@
 			this.nextButtonInitinalValue = this.nextButton.val();
 			this.nextButton.val(this.options.textNext);
 
-    			this.backButton	= this.element.find(this.options.back)
-    				.click(function() {
-    					wizard._back();return false;
-    				});
+				this.backButton	= this.element.find(this.options.back)
+					.click(function() {
+						wizard._back();return false;
+					});
 
-	    		this.backButtonInitinalValue = this.backButton.val();
-	    		this.backButton.val(this.options.textBack);
+				this.backButtonInitinalValue = this.backButton.val();
+				this.backButton.val(this.options.textBack);
 
 			if(this.options.validationEnabled && jQuery().validate  == undefined){
 				this.options.validationEnabled = false;
@@ -438,7 +438,7 @@
 			textBack : 'Back',
 			remoteAjax : undefined,
 			inAnimation : {opacity: 'show'},
-	        	outAnimation: {opacity: 'hide'},
+			outAnimation: {opacity: 'hide'},
 			inDuration : 400,
 			outDuration: 400,
 			easing: 'swing',

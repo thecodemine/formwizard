@@ -1,12 +1,12 @@
 # FormWizard
 
-FormWizard is a jQuery plugin which turns a regular HTML form into a wizard with very little effort. 
+FormWizard is a jQuery plugin which turns a regular HTML form into a wizard with very little effort.
 
 The plugin supports AJAX form submission, form validation and browser back and forward buttons, all through integration with the following jQuery plugins:
 
 * jQuery form
 * jQuery validation
-* BBQ plugin.
+* [BBQ plugin](https://github.com/cowboy/jquery-bbq)
 
 ## Compatibility
 
@@ -35,7 +35,7 @@ Example usage. This is a very simple setup.
             focusFirstInput : true,
             formOptions : {
                 success: function(data) {
-                    $("#status").fadeTo(500,1,function(){ 
+                    $("#status").fadeTo(500,1,function(){
                         $(this).html("You are now registered!").fadeTo(5000, 0);
                     })
                 },
@@ -43,7 +43,7 @@ Example usage. This is a very simple setup.
                     $("#data").html("data sent to the server: " + $.param(data));
                 },
                 dataType: 'json',
-						    resetForm: true
+                resetForm: true
             }
         });
     });

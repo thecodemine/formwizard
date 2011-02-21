@@ -19,12 +19,14 @@ This will be updated as more testing is completed
 
 Be sure to have the correct includes obviously.
 
-* **jquery-1.4.2.min.js** or **jquery-1.4.4.min.js**
-* **jquery.form.js**
-* **jquery.validate.js**
-* **bbq.js**
-* **jquery-ui-1.8.5.custom.min.js**
-* **jquery.form.wizard-{version}**
+* jquery-1.4.2.min.js or jquery-1.4.4.min.js
+* jquery.form.js
+* jquery.validate.js
+* bbq.js
+* jquery-ui-1.8.5.custom.min.js
+* jquery.form.wizard-{version}
+
+Example usage. This is a very simple setup.
 
     $(function() {
         $("#demoForm").formwizard({
@@ -44,9 +46,13 @@ Be sure to have the correct includes obviously.
 						    resetForm: true
             }
         });
-  		});
+    });
 
 
 # Live Demo
 
-The plugins official demo and documentation page can be found at http://thecodemine.org
+[Live Demo](http://thecodemine.org)
+
+# Development
+
+If you have an idea for the plugin, you may voice them, but if you want to see changes instantly, fork and do a pull request.

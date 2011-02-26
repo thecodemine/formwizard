@@ -8,7 +8,7 @@ Version 3.0.5 released. Changes:
 - delay the triggering of the "step_shown" event until the step has finished animating.
 - updated example : example_11_changing_options_after_initialization.html so that the transition animation is changed in runtime
 - updated example : example_4_step_shown_event.html
-- updated the plugin to use console.log, if available instead of using an alert
+- updated the plugin to use console.log, if available instead of using an alert.
 
 
 October 22.

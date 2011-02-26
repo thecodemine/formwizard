@@ -89,13 +89,17 @@
 
 			if(this.options.validationEnabled && jQuery().validate  == undefined){
 				this.options.validationEnabled = false;
-				console.log("%s", "the validation plugin needs to be included");
+				if( (window['console'] !== undefined) ){
+					console.log("%s", "validationEnabled option set, but the validation plugin is not included");
+				}
 			}else if(this.options.validationEnabled){
 				this.element.validate(this.options.validationOptions);
 			}
 			if(this.options.formPluginEnabled && jQuery().ajaxSubmit == undefined){
 				this.options.formPluginEnabled = false;
-				console.log("%s", "the form plugin needs to be included");
+				if( (window['console'] !== undefined) ){
+					console.log("%s", "formPluginEnabled option set but the form plugin is not included");
+				}
 			}
 
 			if(this.options.disableInputFields == true){
@@ -444,7 +448,7 @@
 			easing: 'swing',
 			focusFirstInput : false,
 			disableInputFields : true,
-			formOptions : { reset: true, success: function(data) { console.log("%s", "success"); },
+			formOptions : { reset: true, success: function(data) { if( (window['console'] !== undefined) ){console.log("%s", "form submit successful");}},
 			disableUIStyles : false
 		}
    }

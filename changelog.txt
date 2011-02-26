@@ -1,4 +1,6 @@
-Version 3.0.5 alpha
+February 26. 2011
+
+Version 3.0.5 released. Changes:
 
 - use eq(0) instead of first() for working towards backwards compatibility with jQuery < 1.4 
 - rename the javascript file from jquery.form.wizard-3.0.4.js to jquery.form.wizard.js for easier maintenance around releases. Updated examples to refer to the new filename.

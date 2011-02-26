@@ -1,8 +1,8 @@
 /*
- * jQuery wizard plug-in 3.0.5 alpha (20-FEB-2011)
+ * jQuery wizard plug-in 3.0.5
  *
  *
- * Copyright (c) 2010 Jan Sundman (jan.sundman[at]aland.net)
+ * Copyright (c) 2011 Jan Sundman (jan.sundman[at]aland.net)
  *
  * http://www.thecodemine.org
  *

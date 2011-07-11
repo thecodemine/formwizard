@@ -71,21 +71,23 @@
 			this.isLastStep = false;
 			this.previousStep = undefined;
 			this.currentStep = this.steps.eq(0).attr("id");
-			this.nextButton	= this.element.find(this.options.next)
-					.click(function() {
-						return wizard._next();
-					});
+			this.nextButton	= (typeof(this.options.next.jquery) !== 'undefined' ? this.options.next : this.element.find(this.options.next))
+			.button()
+			.click(function() {
+				return wizard._next();
+			});
 
-			this.nextButtonInitinalValue = this.nextButton.val();
-			this.nextButton.val(this.options.textNext);
+			this.nextButtonInitinalValue = this.nextButton.button('option', 'label');
+			this.nextButton.button('option', 'label', this.options.textNext);
 
-				this.backButton	= this.element.find(this.options.back)
-					.click(function() {
-						wizard._back();return false;
-					});
+			this.backButton	= (typeof(this.options.back.jquery) !== 'undefined' ? this.options.back : this.element.find(this.options.back))
+			.button()
+			.click(function() {
+				wizard._back();return false;
+			});
 
-				this.backButtonInitinalValue = this.backButton.val();
-				this.backButton.val(this.options.textBack);
+			this.backButtonInitinalValue = this.backButton.button('option', 'label');
+			this.backButton.button('option', 'label', this.options.textBack);
 
 			if(this.options.validationEnabled && jQuery().validate  == undefined){
 				this.options.validationEnabled = false;
@@ -228,8 +230,8 @@
 		},
 
 		_disableNavigation : function(){
-			this.nextButton.attr("disabled","disabled");
-			this.backButton.attr("disabled","disabled");
+			this.nextButton.button("disable");
+			this.backButton.button("disable");
 			if(!this.options.disableUIStyles){
 				this.nextButton.removeClass("ui-state-active").addClass("ui-state-disabled");
 				this.backButton.removeClass("ui-state-active").addClass("ui-state-disabled");
@@ -238,19 +240,19 @@
 
 		_enableNavigation : function(){
 			if(this.isLastStep){
-				this.nextButton.val(this.options.textSubmit);
+				this.nextButton.button('option', 'label', this.options.textSubmit);
 			}else{
-				this.nextButton.val(this.options.textNext);
+				this.nextButton.button('option', 'label', this.options.textNext);
 			}
 
 			if($.trim(this.currentStep) !== this.steps.eq(0).attr("id")){
-				this.backButton.removeAttr("disabled");
+				this.backButton.button("enable");
 				if(!this.options.disableUIStyles){
 					this.backButton.removeClass("ui-state-disabled").addClass("ui-state-active");
 				}
 			}
 
-			this.nextButton.removeAttr("disabled");
+			this.nextButton.button("enable");
 			if(!this.options.disableUIStyles){
 				this.nextButton.removeClass("ui-state-disabled").addClass("ui-state-active");
 			}
@@ -400,8 +402,8 @@
 
 		destroy: function() {
 			this.element.find("*").removeAttr("disabled").show();
-			this.nextButton.unbind("click").val(this.nextButtonInitinalValue).removeClass("ui-state-disabled").addClass("ui-state-active");
-			this.backButton.unbind("click").val(this.backButtonInitinalValue).removeClass("ui-state-disabled").addClass("ui-state-active");
+			this.nextButton.unbind("click").button('destroy').val(this.nextButtonInitinalValue).removeClass("ui-state-disabled");
+			this.backButton.unbind("click").button('destroy').val(this.backButtonInitinalValue).removeClass("ui-state-disabled");
 			this.backButtonInitinalValue = undefined;
 			this.nextButtonInitinalValue = undefined;
 			this.activatedSteps = undefined;

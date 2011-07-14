@@ -434,7 +434,7 @@
 			validationOptions : undefined,
 			formPluginEnabled : false,
 			linkClass	: ".link",
-			linkAttr	: "val",
+			linkAttr	: "value",
 			submitStepClass : "submit_step",
 			back : ":reset",
 			next : ":submit",

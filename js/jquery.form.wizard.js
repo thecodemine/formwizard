@@ -325,6 +325,10 @@
 					this.activatedSteps.push(step);
 				}
 			}
+			
+			if(triggerStepShown) {
+				(this.element).trigger('before_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
+			}
 
 			if(this.currentStep !== step || step === this.firstStep){
 				this.previousStep = this.currentStep;

@@ -148,6 +148,10 @@
 					return false;
 				}
 			}
+			
+			if(this.nextButton.attr('disabled')){
+                return false;
+            }
 
 			if(this.options.remoteAjax != undefined){
 				var options = this.options.remoteAjax[this.currentStep];
@@ -185,7 +189,10 @@
 		},
 
 		_back : function(){
-			if(this.activatedSteps.length > 0){
+			if(this.activatedSteps.length > 0){			
+				if(this.backButton.attr('disabled')){
+                    return false;
+                }
 				if(this.options.historyEnabled){
 					this._updateHistory(this.activatedSteps[this.activatedSteps.length - 2]);
 				}else{

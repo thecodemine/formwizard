@@ -331,10 +331,11 @@
 				this.currentStep = step;
 				var stepShownCallback = function(){
 					if(triggerStepShown){
-					    $(this.element).trigger('before_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));};	
-					    $(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));};
-					    $(this.element).trigger('after_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));};
+					    $(this.element).trigger('before_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));	
+					    $(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
+					    $(this.element).trigger('after_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
 					}
+				};
 				this._animate(this.previousStep, step, stepShownCallback);
 			};
 

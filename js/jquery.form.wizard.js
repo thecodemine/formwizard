@@ -336,7 +336,6 @@
 					
 				$(this.element).trigger('before_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
 				this._animate(this.previousStep, step, stepShownCallback);
-				$(this.element).trigger('after_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
 			};
 
 

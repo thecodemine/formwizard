@@ -63,6 +63,10 @@
 					}
 				}
 			});
+			
+			if (this.options.historyEnabled) {
+				$.bbq.removeState("_" + $(this.element).attr('id'));
+			}
 
 			this.steps = this.element.find(".step").hide();
 

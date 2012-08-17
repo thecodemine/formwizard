@@ -1,3 +1,9 @@
+August 17. 2012
+
+- Bug fix for data returned from the 'state' method. The 'firstStep' field contained invalid value if the first step was removed and the method 'update_steps' was called.
+- Updated examples to use div elements for defining the steps. 
+- Fix for issue where the wizard got "stuck" after reload (when the bbq history plugin was enabled). Thanks to thingalon.
+
 February 26. 2011
 
 Version 3.0.5 released. Changes:

@@ -1,5 +1,5 @@
 /*
- * jQuery wizard plug-in 3.0.5 alpha (20-FEB-2011)
+ * jQuery wizard plug-in 3.0.6 (17-AUG-2011)
  *
  *
  * Copyright (c) 2010 Jan Sundman (jan.sundman[at]aland.net)
@@ -423,6 +423,7 @@
 
 		update_steps : function(){
 			this.steps = this.element.find(".step").addClass("ui-formwizard-content");
+			this.firstStep = this.steps.eq(0).attr("id");
 			this.steps.not("#" + this.currentStep).hide().find(":input").addClass("ui-wizard-content").attr("disabled","disabled");
 			this._checkIflastStep(this.currentStep);
 			this._enableNavigation();

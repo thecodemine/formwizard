@@ -89,75 +89,75 @@
 			<h5 id="status"></h5>
 			<form id="demoForm" method="post" action="json.html" class="bbq">
 				<div id="fieldWrapper">
-				<span class="step" id="first">
+				<div class="step" id="first">
 					<span class="font_normal_07em_black">Common first step - Name and Country</span><br />
 					<label for="firstname">First name</label><br />
-					<input class="input_field_12em" name="firstname" id="firstname"><br />
+					<input class="input_field_12em" name="firstname" id="firstname" /><br />
 					<label for="surname">Surname</label><br />
-					<input class="input_field_12em" name="surname" id="surname"><br />
+					<input class="input_field_12em" name="surname" id="surname" /><br />
 					<label for="country">Country</label><br />
 					<select class="input_field_12em link required" name="country" id="country">
 						<option value=""></option>
 						<option value="sweden">Sweden</option>
 						<option value="finland">Finland</option>
 					</select><br />
-				</span>
-				<span id="sweden" class="step submit_step">
+				</div>
+				<div id="sweden" class="step submit_step">
 					<span class="font_normal_07em_black">Swedish last step - Information</span><br />
 					<label for="day_se">Social Security Number</label><br />
-					<input class="input_field_25em" name="day" id="day_se" value="DD">
-					<input class="input_field_25em" name="month" id="month_se" value="MM">
-					<input class="input_field_3em" name="year" id="year_se" value="YYYY"> - 
-					<input class="input_field_3em" name="lastFour" id="lastFour_se" value="XXXX"><br />
+					<input class="input_field_25em" name="day" id="day_se" value="DD" />
+					<input class="input_field_25em" name="month" id="month_se" value="MM" />
+					<input class="input_field_3em" name="year" id="year_se" value="YYYY" /> - 
+					<input class="input_field_3em" name="lastFour" id="lastFour_se" value="XXXX" /><br />
 					<label for="countryPrefix_se">Phone number</label><br />
-					<input class="input_field_35em" name="countryPrefix" id="countryPrefix_se" value="+358"> - 
-					<input class="input_field_3em" name="areaCode" id="areaCode_se"> - 
-					<input class="input_field_12em" name="phoneNumber" id="phoneNumber_se"><br />
+					<input class="input_field_35em" name="countryPrefix" id="countryPrefix_se" value="+46" /> - 
+					<input class="input_field_3em" name="areaCode" id="areaCode_se" /> - 
+					<input class="input_field_12em" name="phoneNumber" id="phoneNumber_se" /><br />
 					<label for="email_se">*Email</label><br />
-					<input class="input_field_12em required email" name="email" id="email_se"><br />
+					<input class="input_field_12em required email" name="email" id="email_se" /><br />
 					<label for="username_se">User name</label><br />
-					<input class="input_field_12em" name="username" id="username_se"><br />
+					<input class="input_field_12em" name="username" id="username_se" /><br />
 					<label for="password_se">Password</label><br />
-					<input class="input_field_12em" name="password" id="password_se" type="password"><br />
+					<input class="input_field_12em" name="password" id="password_se" type="password" /><br />
 					<label for="retypePassword_se">Retype password</label><br />
-					<input class="input_field_12em" name="retypePassword" id="retypePassword_se" type="password"><br />			
-				</span>
-				<span id="finland" class="step">
+					<input class="input_field_12em" name="retypePassword" id="retypePassword_se" type="password" /><br />			
+				</div>
+				<div id="finland" class="step">
 					<span class="font_normal_07em_black">Finnish Step 2 - Personal information</span><br />
 					<label for="day_fi">Social Security Number</label><br />
-					<input class="input_field_25em" name="day" id="day_fi" value="DD">
-					<input class="input_field_25em" name="month" id="month_fi" value="MM">
-					<input class="input_field_3em" name="year" id="year_fi" value="YYYY"> - 
-					<input class="input_field_3em" name="lastFour" id="lastFour_fi" value="XXXX"><br />
+					<input class="input_field_25em" name="day" id="day_fi" value="DD" />
+					<input class="input_field_25em" name="month" id="month_fi" value="MM" />
+					<input class="input_field_3em" name="year" id="year_fi" value="YYYY" /> - 
+					<input class="input_field_3em" name="lastFour" id="lastFour_fi" value="XXXX" /><br />
 					<label for="countryPrefix_fi">Phone number</label><br />
-					<input class="input_field_35em" name="countryPrefix" id="countryPrefix_fi" value="+358"> - 
-					<input class="input_field_3em" name="areaCode" id="areaCode_fi"> - 
-					<input class="input_field_12em" name="phoneNumber" id="phoneNumber_fi"><br />
+					<input class="input_field_35em" name="countryPrefix" id="countryPrefix_fi" value="+358" /> - 
+					<input class="input_field_3em" name="areaCode" id="areaCode_fi" /> - 
+					<input class="input_field_12em" name="phoneNumber" id="phoneNumber_fi" /><br />
 					<label for="email_fi">*Email</label><br />
-					<input class="input_field_12em required email" name="email" id="email_fi"><br />
+					<input class="input_field_12em required email" name="email" id="email_fi" /><br />
 					<label for="newsletter">Newsletter</label><br />
-					<select class="link" name="newsletter" id="newsletter">
+					<select class="link" name="newsletter" id="newsletter_select">
 						<option value="confirmation">No thanks, just take me to the last step</option>
 						<option value="newsletter">Yes please</option>
 					</select>
-				</span>
-				<span id="newsletter" class="step">
+				</div>
+				<div id="newsletter" class="step">
 					<span class="font_normal_07em_black">Finnish Step 3 - Newsletter language</span><br />
 					<label for="language">Newsletter language</label><br />
 					<select name="language" id="language">
 						<option value="finnish">Finnish</option>
 						<option value="Swedish">Swedish</option>
 					</select>
-				</span>
-				<span id="confirmation" class="step">
+				</div>
+				<div id="confirmation" class="step">
 					<span class="font_normal_07em_black">Finnish last step - Username</span><br />
 					<label for="username">User name</label><br />
-					<input class="input_field_12em" name="username" id="username"><br />
+					<input class="input_field_12em" name="username" id="username" /><br />
 					<label for="password">Password</label><br />
-					<input class="input_field_12em" name="password" id="password" type="password"><br />
+					<input class="input_field_12em" name="password" id="password" type="password" /><br />
 					<label for="retypePassword">Retype password</label><br />
-					<input class="input_field_12em" name="retypePassword" id="retypePassword" type="password"><br />
-				</span>
+					<input class="input_field_12em" name="retypePassword" id="retypePassword" type="password" /><br />
+				</div>
 				</div>
 				<div id="demoNavigation"> 							
 					<input class="navigation_button" id="back" value="Back" type="reset" />

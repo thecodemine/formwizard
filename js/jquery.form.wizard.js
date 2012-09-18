@@ -1,8 +1,8 @@
 /*
- * jQuery wizard plug-in 3.0.6 (17-AUG-2011)
+ * jQuery wizard plug-in 3.0.7 (18-SEPT-2012)
  *
  *
- * Copyright (c) 2010 Jan Sundman (jan.sundman[at]aland.net)
+ * Copyright (c) 2012 Jan Sundman (jan.sundman[at]aland.net)
  *
  * http://www.thecodemine.org
  *
@@ -260,7 +260,7 @@
 			}
 		},
 
-		_animate : function(oldStep, newStep, stepToShowCallback, stepShownCallback){
+		_animate : function(oldStep, newStep, stepShownCallback){
 			this._disableNavigation();
 			var old = this.steps.filter("#" + oldStep);
 			var current = this.steps.filter("#" + newStep);
@@ -268,7 +268,6 @@
 			current.find(":input").not(".wizard-ignore").removeAttr("disabled");
 			var wizard = this;
 			old.animate(wizard.options.outAnimation, wizard.options.outDuration, wizard.options.easing, function(){
-				stepToShowCallback.apply(wizard);
 				current.animate(wizard.options.inAnimation, wizard.options.inDuration, wizard.options.easing, function(){
 					if(wizard.options.focusFirstInput)
 						current.find(":input:first").focus();
@@ -334,9 +333,11 @@
 				this.previousStep = this.currentStep;
 				this._checkIflastStep(step);
 				this.currentStep = step;
-				var stepShownCallback = function(){if(triggerStepShown)$(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));};
-				var stepToShowCallback = function(){if(triggerStepShown)$(this.element).trigger('step_to_show', $.extend({"isBackNavigation" : backwards},this._state()));};
-				this._animate(this.previousStep, step, stepToShowCallback, stepShownCallback);
+				var stepShownCallback = function(){if(triggerStepShown){$(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));}}
+				if(triggerStepShown){
+					$(this.element).trigger('before_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
+				}
+				this._animate(this.previousStep, step, stepShownCallback);
 			};
 
 

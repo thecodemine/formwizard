@@ -1,3 +1,7 @@
+September 18. 2012
+
+- Added event before_step_shown which is triggered before a step transition is started.
+
 August 17. 2012
 
 - Bug fix for data returned from the 'state' method. The 'firstStep' field contained invalid value if the first step was removed and the method 'update_steps' was called.

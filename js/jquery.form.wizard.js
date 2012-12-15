@@ -1,5 +1,5 @@
-/*
- * jQuery wizard plug-in 3.0.7 (18-SEPT-2012)
+/**
+ * @license jQuery wizard plug-in 3.0.7 (18-SEPT-2012)
  *
  *
  * Copyright (c) 2012 Jan Sundman (jan.sundman[at]aland.net)

@@ -259,7 +259,6 @@
 				this.nextButton.removeClass("ui-state-disabled").addClass("ui-state-active");
 			}
 		},
-
 		_animate : function(oldStep, newStep, stepShownCallback){
 			this._disableNavigation();
 			var old = this.steps.filter("#" + oldStep);
@@ -328,19 +327,22 @@
 					this.activatedSteps.push(step);
 				}
 			}
-
 			if(this.currentStep !== step || step === this.firstStep){
 				this.previousStep = this.currentStep;
 				this._checkIflastStep(step);
 				this.currentStep = step;
 				var stepShownCallback = function(){if(triggerStepShown){$(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));}}
+        var wizardData = $.extend({"isBackNavigation" : backwards, "skipStep": false},this._state());
 				if(triggerStepShown){
-					$(this.element).trigger('before_step_shown', $.extend({"isBackNavigation" : backwards},this._state()));
+          $(this.element).trigger('before_step_shown', wizardData);
 				}
-				this._animate(this.previousStep, step, stepShownCallback);
+        if (wizardData.skipStep) {
+          if (backwards) { this._back(); } else { this._next(); }
+          this.update_steps();
+        } else {
+          this._animate(this.previousStep, step, stepShownCallback);
+        }
 			};
-
-
 		},
 
 	   _reset : function(){

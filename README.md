@@ -44,7 +44,7 @@ $(function() {
 ```
 
 # License
-Licensed under the MIT licens: http://www.opensource.org/licenses/mit-license.php
+Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
 
 # Development
 This plugin is no longer maintained.

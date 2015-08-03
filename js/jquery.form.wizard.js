@@ -4,7 +4,6 @@
  *
  * Copyright (c) 2012 Jan Sundman (jan.sundman[at]aland.net)
  *
- * http://www.thecodemine.org
  *
  * Licensed under the MIT licens:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -63,7 +62,7 @@
 					}
 				}
 			});
-			
+
 			if (this.options.historyEnabled) {
 				$.bbq.removeState("_" + $(this.element).attr('id'));
 			}

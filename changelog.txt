@@ -1,3 +1,7 @@
+August 3. 2014-05
+
+- Removed the URL that references http://thecodemine.org as this is no longer used by the project.
+
 September 18. 2012
 
 - Added event before_step_shown which is triggered before a step transition is started.
@@ -5,14 +9,14 @@ September 18. 2012
 August 17. 2012
 
 - Bug fix for data returned from the 'state' method. The 'firstStep' field contained invalid value if the first step was removed and the method 'update_steps' was called.
-- Updated examples to use div elements for defining the steps. 
+- Updated examples to use div elements for defining the steps.
 - Fix for issue where the wizard got "stuck" after reload (when the bbq history plugin was enabled). Thanks to thingalon.
 
 February 26. 2011
 
 Version 3.0.5 released. Changes:
 
-- use eq(0) instead of first() for working towards backwards compatibility with jQuery < 1.4 
+- use eq(0) instead of first() for working towards backwards compatibility with jQuery < 1.4
 - rename the javascript file from jquery.form.wizard-3.0.4.js to jquery.form.wizard.js for easier maintenance around releases. Updated examples to refer to the new filename.
 - remove initial call to this._updateHistory(this.firstStep), this to prevent firefox from hiding the favicon (due to some issue with pushState).
 - delay the triggering of the "step_shown" event until the step has finished animating.
@@ -41,7 +45,7 @@ September 26.
 Version 3.0.2 released. Changes:
 
 - disableUIStyles option added. The option can be used to keep the plugin from adding jquery.ui styling to the form.
-- updated the zip with version 1.8.5 of jqueryui which just contains core, widget and effects code. 
+- updated the zip with version 1.8.5 of jqueryui which just contains core, widget and effects code.
 
 September 13.
 
@@ -69,10 +73,10 @@ Version 3.0.0 (alpha 1) released. Changes:
  - Removed dependency on jQuery history plugin
  - Added browser back button functionality by integration of the bbq plugin
  - Updated examples
- 
+
  Notes:
  	- this version is an alpha release and thus should not be considered a final version. Testing is still needed and bug reports are very welcome, please send them to jan.sundman@aland.net
- 	- this version lacks documentation at this stage, this will hopefully change soon. Hopefully the examples provided in the examples directory will suffice for the time being (shows most new features at least). 
+ 	- this version lacks documentation at this stage, this will hopefully change soon. Hopefully the examples provided in the examples directory will suffice for the time being (shows most new features at least).
  	- the options available to the initialization of the plugin are the following (including default values):
 
 	 			historyEnabled	: false,	// specifies whether BBQ plugin should be used to enable browser back and forward buttons.
@@ -95,11 +99,11 @@ Version 3.0.0 (alpha 1) released. Changes:
 				focusFirstInput : false,	// specifies whether the first input field on every step should be selected after step-transition - or not.
 				disableInputFields : true, 	// disables all input fields in the form on initialization
 				formOptions : { reset: true, success: function(data) { alert("success"); } // defaults to reset the form on successful submit (and shows 'success' in an alert). The options for the form plugin
-				
+
  	- this version has been tested in Firefox 3.6.6, Chromium 5.0.375.70 (48679) Ubuntu. and IE8 (Will try to verify in other browsers shortly.)
- 	
+
 	Feedback is much appreciated!
-	
+
 -----------------------
 
 April 4.
@@ -130,14 +134,14 @@ Version 2.0.0-RC4 released. Changes:
 
 February 11, 2010
 
-Version 2.0.0-RC3 released. Changes: 
+Version 2.0.0-RC3 released. Changes:
  - fixed "vertical jumping" of the page after wizard initialization and when navigating between steps. This occurred due to the browser url having a hash (#stepid) that equaled an element id in the page. The fix was to append a '_'-character before the step id when using the history plugin. This means of course that people using direct linking to a step need to revise their url:s by prepending the same '_'-character. One can also use the show method of the plugin to get to a specified step e.g. $('#idofelement').click(function(){$("#formid").formwizard("show","stepid");});
 
 -----------------------
 
 February 10, 2010
 
-Version 2.0.0-RC2 released. Changes: 
+Version 2.0.0-RC2 released. Changes:
  - fixed bug where radiobuttons did not work as links.
  - fixed so that first input field of each step can be focused properly by setting focusFirstInput to true
  - fixed smoother animation when transitioning between steps (only available when history plugin is disabled).
@@ -196,7 +200,7 @@ Version 0.9.6 released. Changes: Fix for enabling select validation.
 
 -----------------------
 
-July 17, 2009", 
+July 17, 2009",
 
 Version 0.9.5 released. Changes: Fix for enabling optional validation.
 

@@ -145,6 +145,10 @@
 		},
 
 		_next : function(){
+			if(this.nextButton.attr('disabled')){
+				return false;
+			}
+
 			if(this.options.validationEnabled){
 				if(!this.element.valid()){
 					this.element.validate().focusInvalid();
@@ -189,6 +193,10 @@
 
 		_back : function(){
 			if(this.activatedSteps.length > 0){
+				if(this.backButton.attr('disabled')){
+					return false;
+				}
+
 				if(this.options.historyEnabled){
 					this._updateHistory(this.activatedSteps[this.activatedSteps.length - 2]);
 				}else{

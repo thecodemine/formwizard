@@ -346,7 +346,7 @@
 			this.element.resetForm()
 			$("label,:input,textarea",this).removeClass("error");
 			for(var i = 0; i < this.activatedSteps.length; i++){
-				this.steps.filter("#" + this.activatedSteps[i]).hide().find(":input").attr("disabled","disabled");
+				this.steps.filter("#" + this.activatedSteps[i]).hide().find(":input:not('.wizard-ignore')").attr("disabled","disabled");
 			}
 			this.activatedSteps = new Array();
 			this.previousStep = undefined;
@@ -426,7 +426,7 @@
 		update_steps : function(){
 			this.steps = this.element.find(".step").addClass("ui-formwizard-content");
 			this.firstStep = this.steps.eq(0).attr("id");
-			this.steps.not("#" + this.currentStep).hide().find(":input").addClass("ui-wizard-content").attr("disabled","disabled");
+			this.steps.not("#" + this.currentStep).hide().find(":input:not('.wizard-ignore')").addClass("ui-wizard-content").attr("disabled","disabled");
 			this._checkIflastStep(this.currentStep);
 			this._enableNavigation();
 			if(!this.options.disableUIStyles){

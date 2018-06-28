@@ -90,6 +90,8 @@
 				this.backButtonInitinalValue = this.backButton.val();
 				this.backButton.val(this.options.textBack);
 
+			this.isAnimating = false;
+
 			if(this.options.validationEnabled && jQuery().validate  == undefined){
 				this.options.validationEnabled = false;
 				if( (window['console'] !== undefined) ){
@@ -145,6 +147,10 @@
 		},
 
 		_next : function(){
+			if(this.isAnimating){
+				return false;
+			}
+			
 			if(this.options.validationEnabled){
 				if(!this.element.valid()){
 					this.element.validate().focusInvalid();
@@ -260,6 +266,7 @@
 		},
 
 		_animate : function(oldStep, newStep, stepShownCallback){
+			this.isAnimating = true;
 			this._disableNavigation();
 			var old = this.steps.filter("#" + oldStep);
 			var current = this.steps.filter("#" + newStep);
@@ -271,6 +278,7 @@
 					if(wizard.options.focusFirstInput)
 						current.find(":input:first").focus();
 					wizard._enableNavigation();
+					wizard.isAnimating = false;
 
 					stepShownCallback.apply(wizard);
 				});
